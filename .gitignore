@@ -1,15 +1,10 @@
 .DS_Store
 .vscode
 .idea
-node_modules
-datasets
 
-outputs
+datasets
 
 __pycache__
 
-.Rproj.user
-.Rdata
-.Rhistory
-
 venv
+*.db
