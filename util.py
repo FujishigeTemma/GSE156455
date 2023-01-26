@@ -11,7 +11,7 @@ def download_all_data_if_not_exist(url: str, dst: str, filter: Callable[[str], b
     Download data if not exist via FTP.
 
     Args:
-      url: FTP url must contains hostname and dir path.
+      url: FTP url must contain hostname and dir path.
       dst: destination path where files downloaded. If not exist, it will be created.
       filter: filter function to filter files.
     """
@@ -38,11 +38,11 @@ def download_all_data_if_not_exist(url: str, dst: str, filter: Callable[[str], b
 
 
 def unzip(src: str, dst: str):
-  """
-  Unzip all files in src directory to dst.
-  """
-  for file in os.listdir(src):
-    if file.endswith(".gz") and not os.path.isfile(os.path.join(dst, file.removesuffix(".gz"))):
-      with gzip.open(os.path.join(src, file), "rb") as f_in:
-          with open(os.path.join(dst, file), "wb+") as f_out:
-              shutil.copyfileobj(f_in, f_out)
+    """
+    Unzip all files in src directory to dst.
+    """
+    for file in os.listdir(src):
+        if file.endswith(".gz") and not os.path.isfile(os.path.join(dst, file.removesuffix(".gz"))):
+            with gzip.open(os.path.join(src, file), "rb") as f_in:
+                with open(os.path.join(dst, file), "wb+") as f_out:
+                    shutil.copyfileobj(f_in, f_out)
